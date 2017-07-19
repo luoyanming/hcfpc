@@ -1,0 +1,185 @@
+@import "base/common";
+
+// ==============================================
+// yingmi
+// ==============================================
+.yingmi{
+	position: relative;
+	@include backgroundImage('../image/yingmi-bg-1920x1850.jpg', no-repeat, center, center, auto, 100%);
+
+	.container{
+		width: 840px;
+		height: 1850px;
+		overflow: hidden;
+	}
+
+	.big-title{
+		width: 311px;
+		height: 75px;
+		margin: 215px auto 0;
+		@include backgroundImage('../image/index-banenr-2-text-1-311x75.png', no-repeat, center, center, 100%, 100%);
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, 0);
+		}
+	}
+	.small-title{
+		width: 302px;
+		height: 28px;
+		margin: 26px auto 0;
+		@include backgroundImage('../image/index-banenr-2-text-2-302x28.png', no-repeat, center, center, 100%, 100%);
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .1s);
+		}
+	}
+
+	.desc-box{
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		h2{
+			font-size: 30px;
+			color: $colorFFF;
+			line-height: 60px;
+		}
+		p{
+			font-size: 18px;
+			color: $colorFFF;
+			line-height: 40px;
+
+			.strong{
+				font-weight: bold;
+			}
+		}
+		
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+		}
+		
+
+		&.desc-1{
+			margin-top: 170px;
+			
+			&.active{
+				@include transitionTransform(opacity, .5s, ease, .2s);
+			}
+		}
+		&.desc-2{
+			margin-top: 100px;
+			
+			&.active{
+				@include transitionTransform(opacity, .5s, ease, .2s);
+			}
+		}
+		&.desc-3{
+			margin-top: 100px;
+			
+			&.active{
+				@include transitionTransform(opacity, .5s, ease, .2s);
+			}
+		}
+		&.desc-4{
+			margin-top: 100px;
+			
+			&.active{
+				@include transitionTransform(opacity, .5s, ease, .2s);
+			}
+		}
+	}
+
+	.provide{
+		margin-top: 140px;
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		p{
+			font-size: 20px;
+			color: $colorFFF;
+			line-height: 40px;
+			text-align: center;
+
+			span{
+				color: #e19c10;
+			}
+		}
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .2s);
+		}
+	}
+
+	.imgbox{
+		margin: 105px auto 0;
+		width: 241px;
+		height: 27px;
+		@include backgroundImage('../image/yingmi-logo-241x27.png', no-repeat, center, center, 100%, 100%);
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .2s);
+		}
+	}
+}
+
+
+
+
+@media screen and (max-width: 1601px){
+
+// ==============================================
+// yingmi
+// ==============================================
+.yingmi{
+	@include backgroundImage('../image/yingmi-bg-1920x1240.jpg', no-repeat, center, center, auto, 100%);
+
+	.container{
+		height: 1220px;
+	}
+
+	.big-title{
+		margin: 75px auto 0;
+	}
+	.small-title{
+		margin: 21px auto 0;
+	}
+
+	.desc-box{
+		&.desc-1{
+			margin-top: 40px;
+		}
+		&.desc-2{
+			margin-top: 50px;
+		}
+		&.desc-3{
+			margin-top: 50px;
+		}
+		&.desc-4{
+			margin-top: 50px;
+		}
+	}
+
+	.provide{
+		margin-top: 60px;
+	}
+
+	.imgbox{
+		margin: 70px auto 0;
+	}
+}
+
+}

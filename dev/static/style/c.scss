@@ -1,0 +1,753 @@
+@import "base/common";
+
+// ==============================================
+// c
+// ==============================================
+.c-banner{
+	width: 100%;
+	height: 513px;
+	@include backgroundImage('../image/c-banner-bg-1920x513.jpg', no-repeat, center, center, auto, 100%);
+
+	.tel{
+		@include position(absolute, 2, 108px, none, none, 57px);
+		width: 416px;
+		height: 545px;
+		@include backgroundImage('../image/c-banner-tel-416x545.png', no-repeat, center, center, 100%, 100%);
+
+		opacity: 0;
+		@include translate(0, 10%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, 0);
+		}
+	}
+
+	.text{
+		@include position(absolute, 2, 223px, 49px, none, none);
+		width: 477px;
+		height: 100px;
+		@include backgroundImage('../image/c-banner-text-477x100.png', no-repeat, center, center, 100%, 100%);
+	}
+
+	.qrCode-box{
+		@include position(absolute, 2, 364px, 202px, none, none);
+
+		.button{
+			display: block;
+			width: 193px;
+			height: 42px;
+			border: 1px solid $colorYellow;
+			border-radius: 21px;
+			font-size: 18px;
+			line-height: 42px;
+			color: $colorYellow;
+			text-align: center;
+			letter-spacing: 3px;
+			@include transition(all, .2s, ease-in, 0);
+
+			&:hover{
+				color: $colorFFF;
+				background-color: $colorYellow;
+				@include transition(all, .2s, ease-in, 0);
+
+				& + .qrCode-bg{
+					display: block;
+					opacity: 1;
+					@include translate(0, -30px, 0);
+					@include transitionTransform(opacity, .2s, ease, 0);
+				}
+			}
+	
+		}
+		.qrCode-bg{
+			@include position(absolute, 2, 94px, -9px, none, none);
+			width: 212px;
+			height: 222px;
+			@include backgroundImage('../image/c-qrCode-bg-212x222.png', no-repeat, center, center, 100%, 100%);
+			opacity: 0;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .2s, ease, 0);
+
+
+			.qrCode{
+				width: 180px;
+				height: 180px;
+				margin: 27px 0 0 17px;
+				@include backgroundImage('../image/c-qrCode-180x180.jpg', no-repeat, center, center, 100%, 100%);
+			}
+
+			.shadow{
+				@include position(absolute, 2, none, none, 0, 0);
+				width: 212px;
+				height: 137px;
+				@include boxShadow(10px, 10px, 30px, #f3f3f3);
+			}
+		}
+	}
+}
+
+
+
+
+// ==============================================
+// c-intro-one
+// ==============================================
+.c-intro-one{
+	position: relative;
+	
+	.container{
+		height: 880px;
+		overflow: hidden;
+	}
+
+	h1{
+		margin-top: 280px;
+		font-size: 50px;
+		text-align: center;
+		color: $color333;
+		line-height: 80px;
+		letter-spacing: 4px;
+	
+		opacity: 0;
+		@include translate(0, 70%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .8s, ease, .1s);
+		}
+	}
+	h4{
+		margin-top: 8px;
+		font-size: 20px;
+		text-align: center;
+		color: $color666;
+		line-height: 30px;
+
+		opacity: 0;
+		@include translate(0, 150%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .5s);
+		}
+	}
+	ul{
+		margin-top: 90px;
+
+		li{
+			float: left;
+			width: 366px;
+
+			.icon{
+				position: relative;
+				margin: 0 auto;
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				background-color: $colorFFF;
+
+				i{
+					@include position(absolute, 2, 0, none, none, 0);
+					opacity: 0;
+					@include scale(0);
+				}
+
+				&.icon-love{
+					i{
+						margin: 54px 0 0 45px;
+						width: 60px;
+						height: 50px;
+						@include backgroundImage('../image/icon-love-60x50.png', no-repeat, center, center, 100%, 100%);
+					}
+				}
+				&.icon-hand{
+					i{
+						margin: 47px 0 0 50px;
+						width: 49px;
+						height: 57px;
+						@include backgroundImage('../image/icon-hand-49x57.png', no-repeat, center, center, 100%, 100%);
+					}
+				}
+				&.icon-arrow{
+					i{
+						margin: 52px 0 0 41px;
+						width: 63px;
+						height: 50px;
+						@include backgroundImage('../image/icon-arrow-63x50.png', no-repeat, center, center, 100%, 100%);
+					}
+				}
+			}
+
+			p{
+				position: relative;
+				margin-top: 38px;
+				font-size: 18px;
+				color: $color666;
+				line-height: 30px;
+				text-align: center;
+				opacity: 0;
+				@include translate(0, 50%, 0);
+			}
+		}
+
+		&.active{
+			li{
+				.icon{
+					i{
+						opacity: 1;
+						@include scale(1);
+					}
+
+					&.icon-love{
+						background-color: #7f79a6;
+						@include transition(all, .5s, ease, .3s);
+
+						i{
+							@include transitionTransform(opacity, .5s, ease, .35s);
+						}
+					}
+					&.icon-hand{
+						background-color: #655f86;
+						@include transition(all, .5s, ease, .8s);
+
+						i{
+							@include transitionTransform(opacity, .5s, ease, .85s);
+						}
+					}
+					&.icon-arrow{
+						background-color: #46435d;
+						@include transition(all, .5s, ease, 1.3s);
+
+						i{
+							@include transitionTransform(opacity, .5s, ease, 1.35s);
+						}
+					}
+				}
+
+				p{
+					opacity: 1;
+					@include translate(0, 0, 0);
+
+					&.text-love{
+						@include transitionTransform(opacity, .5s, ease, .5s);
+					}
+					&.text-hand{
+						@include transitionTransform(opacity, .5s, ease, .8s);
+					}
+					&.text-arrow{
+						@include transitionTransform(opacity, .5s, ease, 1.1s);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// ==============================================
+// c-intro-two
+// ==============================================
+.c-intro-two{
+	position: relative;
+	@include backgroundImage('../image/c-intro-two-bg-1920x850.jpg', no-repeat, center, center, auto, 100%);
+	
+	.container{
+		height: 850px;
+		overflow: hidden;
+	}
+
+	h1{
+		margin-top: 175px;
+		font-size: 50px;
+		text-align: center;
+		color: $colorFFF;
+		line-height: 80px;
+		letter-spacing: 4px;
+
+		opacity: 0;
+		@include translate(0, 70%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .8s, ease, .1s);
+		}
+	}
+	h4{
+		margin-top: 8px;
+		font-size: 20px;
+		text-align: center;
+		color: $colorFFF;
+		line-height: 30px;
+
+		opacity: 0;
+		@include translate(0, 150%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .5s);
+		}
+	}
+	ul{
+		margin-top: 134px;
+
+		li{
+			float: left;
+			width: 275px;
+
+			.icon-box{
+				position: relative;
+				width: 74px;
+				height: 74px;
+				margin: 0 auto;
+
+				.icon{
+					width: 74px;
+					height: 74px;
+				}
+
+				.number{
+					@include position(absolute, 2, 0, 0, 0, 0);
+					font-size: 30px;
+					line-height: 74px;
+					text-align: center;
+					color: $colorFFF;
+				}
+			}
+
+			p{
+				margin-top: 58px;
+				font-size: 18px;
+				line-height: 36px;
+				text-align: center;
+				color: $colorFFF;
+				opacity: 0;
+				@include translate(0, 50%, 0);
+
+				&.active{
+					opacity: 1;
+					@include translate(0, 0, 0);
+				}
+
+				&.text-1{
+					&.active{
+						@include transitionTransform(opacity, .5s, ease, .8s);
+					}
+				}
+
+				&.text-2{
+					&.active{
+						@include transitionTransform(opacity, .5s, ease, 1.1s);
+					}
+				}
+
+				&.text-3{
+					&.active{
+						@include transitionTransform(opacity, .5s, ease, 1.4s);
+					}
+				}
+
+				&.text-4{
+					&.active{
+						@include transitionTransform(opacity, .5s, ease, 1.7s);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// ==============================================
+// c-intro-three
+// ==============================================
+.c-intro-three{
+	position: relative;
+	background-color: #655f86;
+	
+	.container{
+		height: 970px;
+		border-top: 1px solid #655f86;
+		// overflow: hidden;
+	}
+
+	h1{
+		margin-top: 197px;
+		font-size: 50px;
+		text-align: center;
+		color: $colorFFF;
+		line-height: 80px;
+		letter-spacing: 4px;
+
+		opacity: 0;
+		@include translate(0, 70%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .8s, ease, .1s);
+		}
+	}
+	h4{
+		margin-top: 8px;
+		font-size: 20px;
+		text-align: center;
+		color: $colorFFF;
+		line-height: 30px;
+
+		opacity: 0;
+		@include translate(0, 150%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .5s);
+		}
+	}
+	ul{
+		width: 800px;
+		margin: 80px auto 0;
+		font-size: 0;
+		text-align: center;
+
+		li{
+			position: relative;
+			display: inline-block;
+			margin: 50px 18px 0;
+			width: 178px;
+			height: 44px;
+			font-size: 20px;
+			line-height: 44px;
+			color: $colorFFF;
+			text-align: center;
+			border: 1px solid rgba(255,255,255,.3);
+			border-radius: 22px;
+
+			opacity: 0;
+			@include translate(0, 100%, 0);
+		}
+
+		&.active{
+			li{
+				opacity: 1;
+				@include translate(0, 0, 0);
+
+				&.li-1{
+					@include transitionTransform(opacity, .5s, ease, .5s);
+				}
+				&.li-2{
+					@include transitionTransform(opacity, .5s, ease, .55s);
+				}
+				&.li-3{
+					@include transitionTransform(opacity, .5s, ease, .6s);
+				}
+				&.li-4{
+					@include transitionTransform(opacity, .5s, ease, .65s);
+				}
+				&.li-5{
+					@include transitionTransform(opacity, .5s, ease, .7s);
+				}
+			}
+		}
+	}
+
+	.tel{
+		@include position(absolute, 2, 629px, none, none, 95px);
+		width: 770px;
+		height: 690px;
+		@include backgroundImage('../image/c-intro-three-tel-770x690.png', no-repeat, center, center, 100%, 100%);
+
+		opacity: 0;
+		@include translate(0, 10%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, 1.2s);
+		}
+	}
+}
+
+
+
+// ==============================================
+// 
+// ==============================================
+.c-intro-four{
+	position: relative;
+	
+	.container{
+		height: 1520px;
+		border-top: 1px solid $colorFFF;
+		// overflow: hidden;
+	}
+
+	h1{
+		margin-top: 513px;
+		font-size: 50px;
+		text-align: center;
+		color: $color333;
+		line-height: 80px;
+		letter-spacing: 4px;
+
+		opacity: 0;
+		@include translate(0, 70%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .8s, ease, .1s);
+		}
+	}
+	h4{
+		margin-top: 8px;
+		font-size: 20px;
+		text-align: center;
+		color: $color666;
+		line-height: 30px;
+
+		opacity: 0;
+		@include translate(0, 150%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .5s);
+		}
+	}
+	ul{
+		margin: 100px auto 0;
+
+		li{
+			position: relative;
+			float: left;
+			margin: 4px;
+			overflow: hidden;
+
+			opacity: 0;
+			@include translate(0, 60px, 0);
+
+			&.li-1{
+				width: 267px;
+				height: 392px;
+				background-color: #655f86;
+
+				h3{
+					margin-top: 164px;
+					font-size: 18px;
+					color: $colorFFF;
+					line-height: 30px;
+					text-align: center;
+				}
+				h2{
+					font-size: 24px;
+					color: $colorFFF;
+					line-height: 36px;
+					text-align: center;
+					letter-spacing: 2px;
+				}
+			}
+			&.li-2{
+				width: 362px;
+				height: 192px;
+				@include backgroundImage('../image/c-intro-four-bg-2-362x192.jpg', no-repeat, center, center, 100%, 100%);
+			}
+			&.li-3{
+				width: 447px;
+				height: 192px;
+				background-color: #3a374f;
+
+				h2{
+					margin-top: 63px;
+					font-size: 18px;
+					color: $colorFFF;
+					line-height: 30px;
+					text-align: center;
+				}
+				h3{
+					font-size: 24px;
+					color: $colorFFF;
+					line-height: 36px;
+					text-align: center;
+					letter-spacing: 2px;
+				}
+			}
+			&.li-4{
+				width: 542px;
+				height: 372px;
+				@include backgroundImage('../image/c-intro-four-bg-4-542x372.jpg', no-repeat, center, center, 100%, 100%);
+			}
+			&.li-5{
+				width: 267px;
+				height: 372px;
+				@include backgroundImage('../image/c-intro-four-bg-5-267x372.jpg', no-repeat, center, center, 100%, 100%);
+			}
+			&.li-6{
+				width: 267px;
+				height: 172px;
+				top: -180px;
+				@include backgroundImage('../image/c-intro-four-bg-6-267x172.jpg', no-repeat, center, center, 100%, 100%);
+			}
+		}
+
+		&.active{
+			li{
+				opacity: 1;
+				@include translate(0, 0, 0);
+
+				&.li-1{
+					@include transitionTransform(opacity, .5s, ease, .3s);
+				}
+				&.li-2{
+					@include transitionTransform(opacity, .5s, ease, .4s);
+				}
+				&.li-3{
+					@include transitionTransform(opacity, .5s, ease, .5s);
+				}
+				&.li-4{
+					@include transitionTransform(opacity, .5s, ease, .7s);
+				}
+				&.li-5{
+					@include transitionTransform(opacity, .5s, ease, .8s);
+				}
+				&.li-6{
+					@include transitionTransform(opacity, .5s, ease, .6s);
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+@media screen and (max-width: 1601px){
+
+// ==============================================
+// c
+// ==============================================
+.c-banner{
+	height: 443px;
+	@include backgroundImage('../image/c-banner-bg-1920x443.jpg', no-repeat, center, center, auto, 100%);
+
+	.tel{
+		@include position(absolute, 2, 38px, none, none, 57px);
+	}
+
+	.text{
+		@include position(absolute, 2, 153px, 49px, none, none);
+	}
+
+	.qrCode-box{
+		@include position(absolute, 2, 294px, 202px, none, none);
+	}
+}
+
+
+
+
+// ==============================================
+// c-intro-one
+// ==============================================
+.c-intro-one{
+	.container{
+		height: 680px;
+	}
+
+	h1{
+		margin-top: 180px;
+	}
+	ul{
+		margin-top: 90px;
+
+		li{
+			p{
+				margin-top: 28px;
+			}
+		}
+	}
+}
+
+
+// ==============================================
+// c-intro-two
+// ==============================================
+.c-intro-two{
+	@include backgroundImage('../image/c-intro-two-bg-1920x490.jpg', no-repeat, center, center, auto, 100%);
+	
+	.container{
+		height: 490px;
+	}
+
+	h1{
+		margin-top: 65px;
+	}
+	ul{
+		margin-top: 70px;
+
+		li{
+			p{
+				margin-top: 28px;
+			}
+		}
+	}
+}
+
+
+// ==============================================
+// c-intro-three
+// ==============================================
+.c-intro-three{
+	.container{
+		height: 615px;
+	}
+
+	h1{
+		margin-top: 67px;
+	}
+	ul{
+		margin: 15px auto 0;
+	}
+
+	.tel{
+		// @include position(absolute, 2, 469px, none, none, 95px);
+		// width: 770px;
+		// height: 690px;
+		// @include backgroundImage('../image/c-intro-three-tel-770x690.png', no-repeat, center, center, 100%, 100%);
+		@include position(absolute, 2, 469px, none, none, 195px);
+		width: 547px;
+		height: 490px;
+		@include backgroundImage('../image/c-intro-three-tel-770x690.png', no-repeat, center, center, 100%, 100%);
+	}
+}
+
+
+
+// ==============================================
+// 
+// ==============================================
+.c-intro-four{
+	.container{
+		height: 1280px;
+	}
+
+	h1{
+		margin-top: 353px;
+	}
+
+	ul{
+		margin: 60px auto 0;
+	}
+}
+
+
+}
+
+

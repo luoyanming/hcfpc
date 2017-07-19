@@ -1,0 +1,248 @@
+@import "mixin-font";
+@import "mixin-background";
+@import "mixin-transform";
+
+// ==============================================
+// .friends-link
+// ==============================================
+.friends-link{
+	position: relative;
+	background-color: #f1f0f3;
+	
+	.container{
+		height: 510px;
+		overflow: hidden;
+	}
+
+	h1{
+		margin-top: 37px;
+		font-size: 40px;
+		line-height: 60px;
+		color: $color333;
+		text-align: center;
+
+		opacity: 0;
+		@include translate(0, 70%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .8s, ease, .3s);
+		}
+	}
+
+	.list{
+		margin-top: 25px;
+
+		opacity: 0;
+		@include translate(0, 20%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .8s, ease, .5s);
+		}
+
+		ul{
+			li{
+				float: left;
+				width: 160px;
+				height: 60px;
+				margin: 0 0 30px 75px;
+				// @include transition(all, .5s, ease, 0);
+
+				// &:hover{
+				// 	@include transition(all, .5s, ease, 0);
+				// }
+
+				&:nth-of-type(5n+1) {
+					margin-left: 0;
+				}
+
+				&.item-01{
+					@include backgroundImage('../image/icon-friends-link-01-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-02{
+					@include backgroundImage('../image/icon-friends-link-02-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-03{
+					@include backgroundImage('../image/icon-friends-link-03-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-04{
+					@include backgroundImage('../image/icon-friends-link-04-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-05{
+					@include backgroundImage('../image/icon-friends-link-05-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-06{
+					@include backgroundImage('../image/icon-friends-link-06-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-07{
+					@include backgroundImage('../image/icon-friends-link-07-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-08{
+					@include backgroundImage('../image/icon-friends-link-08-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-09{
+					@include backgroundImage('../image/icon-friends-link-09-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-10{
+					@include backgroundImage('../image/icon-friends-link-10-hover-160x60.png', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-11{
+					@include backgroundImage('../image/icon-friends-link-11-hover-160x60.png', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-12{
+					@include backgroundImage('../image/icon-friends-link-12-hover-160x60.png', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-13{
+					@include backgroundImage('../image/icon-friends-link-13-hover-160x60.png', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-14{
+					@include backgroundImage('../image/icon-friends-link-14-hover-160x60.png', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-15{
+					@include backgroundImage('../image/icon-friends-link-15-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-16{
+					@include backgroundImage('../image/icon-friends-link-16-hover-160x60.png', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-17{
+					@include backgroundImage('../image/icon-friends-link-17-hover-160x60.png', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-18{
+					@include backgroundImage('../image/icon-friends-link-18-hover-160x60.png', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-19{
+					@include backgroundImage('../image/icon-friends-link-19-hover-160x60.png', no-repeat, center, center, 100%, 100%);
+				}
+				&.item-20{
+					@include backgroundImage('../image/icon-friends-link-20-hover-160x60.png', no-repeat, center, center, 100%, 100%);
+				}
+
+				// &.item-01{
+				// 	@include backgroundImage('../image/icon-friends-link-01-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-01-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-02{
+				// 	@include backgroundImage('../image/icon-friends-link-02-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-02-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-03{
+				// 	@include backgroundImage('../image/icon-friends-link-03-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-03-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-04{
+				// 	@include backgroundImage('../image/icon-friends-link-04-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-04-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-05{
+				// 	@include backgroundImage('../image/icon-friends-link-05-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-05-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-06{
+				// 	@include backgroundImage('../image/icon-friends-link-06-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-06-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-07{
+				// 	@include backgroundImage('../image/icon-friends-link-07-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-07-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-08{
+				// 	@include backgroundImage('../image/icon-friends-link-08-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-08-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-09{
+				// 	@include backgroundImage('../image/icon-friends-link-09-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-09-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-10{
+				// 	@include backgroundImage('../image/icon-friends-link-10-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-10-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-11{
+				// 	@include backgroundImage('../image/icon-friends-link-11-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-11-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-12{
+				// 	@include backgroundImage('../image/icon-friends-link-12-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-12-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-13{
+				// 	@include backgroundImage('../image/icon-friends-link-13-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-13-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-14{
+				// 	@include backgroundImage('../image/icon-friends-link-14-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-14-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+				// &.item-15{
+				// 	@include backgroundImage('../image/icon-friends-link-15-160x60.jpg', no-repeat, center, center, 100%, 100%);
+
+				// 	&:hover{
+				// 		@include backgroundImage('../image/icon-friends-link-15-hover-160x60.jpg', no-repeat, center, center, 100%, 100%);
+				// 	}
+				// }
+			}
+		}
+	}
+}
+
+
+
+@media screen and (max-width: 1601px){
+// ==============================================
+// .friends-link
+// ==============================================
+.friends-link{
+	.container{
+		height: 380px;
+	}
+
+	h1{
+		margin-top: 22px;
+	}
+}
+}

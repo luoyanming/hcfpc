@@ -1,0 +1,188 @@
+@import "base/common";
+
+// ==============================================
+// hcf2
+// ==============================================
+.hcf2{
+	position: relative;
+	@include backgroundImage('../image/hcf2.0-bg-1920x2340.jpg', no-repeat, center, center, auto, 100%);
+
+	.container{
+		width: 840px;
+		height: 2340px;
+		overflow: hidden;
+	}
+
+	.big-title{
+		width: 427px;
+		height: 85px;
+		margin: 205px auto 0;
+		@include backgroundImage('../image/index-banenr-1-text-1-427x85.png', no-repeat, center, center, 100%, 100%);
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, 0);
+		}
+	}
+	.small-title{
+		width: 412px;
+		height: 19px;
+		margin: 43px auto 0;
+		@include backgroundImage('../image/index-banenr-1-text-2-412x19.png', no-repeat, center, center, 100%, 100%);
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .1s);
+		}
+	}
+
+	.desc-box{
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		h2{
+			font-size: 30px;
+			color: $colorFFF;
+			line-height: 60px;
+		}
+		p{
+			font-size: 18px;
+			color: $colorFFF;
+			line-height: 40px;
+
+			.strong{
+				font-weight: bold;
+			}
+		}
+
+		ul{
+			margin-top: 41px;
+
+			li{
+				float: left;
+				width: 164px;
+				height: 90px;
+				padding: 37px 0;
+				border: 2px solid $colorFFF;
+				border-radius: 50%;
+
+				&.li-2{
+					margin: 0 163px;
+				}
+
+				p{
+					font-size: 20px;
+					line-height: 30px;
+					color: $colorFFF;
+					text-align: center;
+				}
+			}
+		}
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+		}
+
+		&.desc-1{
+			margin-top: 138px;
+			
+			&.active{
+				@include transitionTransform(opacity, .5s, ease, .2s);
+			}
+		}
+		&.desc-2{
+			margin-top: 100px;
+			
+			&.active{
+				@include transitionTransform(opacity, .5s, ease, .2s);
+			}
+		}
+		&.desc-3{
+			margin-top: 93px;
+			
+			&.active{
+				@include transitionTransform(opacity, .5s, ease, .2s);
+			}
+		}
+		&.desc-4{
+			margin-top: 123px;
+			
+			&.active{
+				@include transitionTransform(opacity, .5s, ease, .2s);
+			}
+
+			h2{
+				margin-bottom: 10px;
+			}
+
+			p{
+				line-height: 50px;
+
+				.bigger{
+					font-size: 30px;
+				}
+			}
+		}
+	}
+
+	.imgbox{
+		margin-top: 108px;
+		height: 464px;
+		@include backgroundImage('../image/hcf2.0-chart-840x464.png', no-repeat, center, center, 100%, 100%);
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .2s);
+		}
+	}
+}
+
+
+@media screen and (max-width: 1601px){
+// ==============================================
+// hcf2
+// ==============================================
+.hcf2{
+	@include backgroundImage('../image/hcf2.0-bg-1920x1830.jpg', no-repeat, center, center, auto, 100%);
+
+	.container{
+		height: 1830px;
+	}
+
+	.big-title{
+		margin: 90px auto 0;
+	}
+	.small-title{
+		margin: 23px auto 0;
+	}
+
+	.desc-box{
+		&.desc-1{
+			margin-top: 58px;
+		}
+		&.desc-2{
+			margin-top: 45px;
+		}
+		&.desc-3{
+			margin-top: 48px;
+		}
+		&.desc-4{
+			margin-top: 63px;
+		}
+	}
+
+	.imgbox{
+		margin-top: 48px;
+	}
+}
+}

@@ -1,0 +1,578 @@
+@import "base/common";
+
+// ==============================================
+// b
+// ==============================================
+.b-banner{
+	width: 100%;
+	height: 513px;
+	@include backgroundImage('../image/b-banner-bg-1920x513.jpg', no-repeat, center, center, auto, 100%);
+
+	.tel{
+		@include position(absolute, 2, 108px, none, none, 57px);
+		width: 416px;
+		height: 545px;
+		@include backgroundImage('../image/b-banner-tel-416x545.png', no-repeat, center, center, 100%, 100%);
+
+		opacity: 0;
+		@include translate(0, 10%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, 0);
+		}
+	}
+
+	.text{
+		@include position(absolute, 2, 219px, 0, none, none);
+		width: 600px;
+		height: 112px;
+		@include backgroundImage('../image/b-banner-text-600x107.png', no-repeat, center, center, 100%, 100%);
+	}
+
+	.qrCode-box{
+		@include position(absolute, 2, 364px, 202px, none, none);
+
+		.button{
+			display: block;
+			width: 193px;
+			height: 42px;
+			border: 1px solid $colorYellow;
+			border-radius: 21px;
+			font-size: 18px;
+			line-height: 42px;
+			color: $colorYellow;
+			text-align: center;
+			letter-spacing: 3px;
+			@include transition(all, .2s, ease-in, 0);
+
+			&:hover{
+				color: $colorFFF;
+				background-color: $colorYellow;
+				@include transition(all, .2s, ease-in, 0);
+
+				& + .qrCode-bg{
+					display: block;
+					opacity: 1;
+					@include translate(0, -30px, 0);
+					@include transitionTransform(opacity, .2s, ease, 0);
+				}
+			}
+	
+		}
+		.qrCode-bg{
+			@include position(absolute, 2, 94px, -9px, none, none);
+			width: 212px;
+			height: 222px;
+			@include backgroundImage('../image/c-qrCode-bg-212x222.png', no-repeat, center, center, 100%, 100%);
+			opacity: 0;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .2s, ease, 0);
+
+
+			.qrCode{
+				width: 180px;
+				height: 180px;
+				margin: 27px 0 0 17px;
+				@include backgroundImage('../image/b-qrCode-180x180.jpg', no-repeat, center, center, 100%, 100%);
+			}
+
+			.shadow{
+				@include position(absolute, 2, none, none, 0, 0);
+				width: 212px;
+				height: 137px;
+				@include boxShadow(10px, 10px, 30px, #f3f3f3);
+			}
+		}
+	}
+}
+
+
+
+// ==============================================
+// b-intro-one
+// ==============================================
+.b-intro-one{
+	position: relative;
+	
+	.container{
+		height: 860px;
+		overflow: hidden;
+	}
+
+	h1{
+		margin-top: 280px;
+		font-size: 50px;
+		text-align: center;
+		color: $color333;
+		line-height: 80px;
+		letter-spacing: 4px;
+	
+		opacity: 0;
+		@include translate(0, 70%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .8s, ease, .1s);
+		}
+	}
+	h4{
+		margin-top: 8px;
+		font-size: 20px;
+		text-align: center;
+		color: $color666;
+		line-height: 30px;
+
+		opacity: 0;
+		@include translate(0, 150%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .5s);
+		}
+	}
+
+	ul{
+		margin-top: 128px;
+
+		li{
+			position: relative;
+			float: left;
+			width: 220px;
+			height: 116px;
+			opacity: 0;
+			@include translate(0, 30%, 0);
+
+			&.active{
+				opacity: 1;
+				@include translate(0, 0, 0);
+			}
+			
+			&.icon-1{
+				@include backgroundImage('../image/b-intro-one-icon-1-72x67.png', no-repeat, center, 48px, 72px, 67px);
+
+				&.active{
+					@include transitionTransform(opacity, .5s, ease, .3s);
+				}
+			}
+
+			&.icon-2{
+				@include backgroundImage('../image/b-intro-one-icon-2-87x51.png', no-repeat, center, 58px, 87px, 51px);
+
+				&.active{
+					@include transitionTransform(opacity, .5s, ease, .6s);
+				}
+			}
+
+			&.icon-3{
+				@include backgroundImage('../image/b-intro-one-icon-3-102x116.png', no-repeat, center, top, 102px, 116px);
+
+				&.active{
+					@include transitionTransform(opacity, .5s, ease, .9s);
+				}
+			}
+
+			&.icon-4{
+				@include backgroundImage('../image/b-intro-one-icon-4-83x71.png', no-repeat, center, 45px, 83px, 71px);
+
+				&.active{
+					@include transitionTransform(opacity, .5s, ease, .6s);
+				}
+			}
+
+			&.icon-5{
+				@include backgroundImage('../image/b-intro-one-icon-5-74x65.png', no-repeat, center, 48px, 74px, 65px);
+
+				&.active{
+					@include transitionTransform(opacity, .5s, ease, .3s);
+				}
+			}
+		}
+	}
+
+}
+
+
+// ==============================================
+// b-intro-two
+// ==============================================
+.b-intro-two{
+	position: relative;
+	@include backgroundImage('../image/b-intro-two-bg-1920x810.jpg', no-repeat, center, center, auto, 100%);
+	
+	.container{
+		height: 810px;
+		overflow: hidden;
+	}
+
+	h1{
+		margin-top: 198px;
+		font-size: 50px;
+		text-align: center;
+		color: $colorFFF;
+		line-height: 80px;
+		letter-spacing: 4px;
+	
+		opacity: 0;
+		@include translate(0, 70%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .8s, ease, .1s);
+		}
+	}
+	h4{
+		margin-top: 8px;
+		font-size: 20px;
+		text-align: center;
+		color: $colorFFF;
+		line-height: 30px;
+
+		opacity: 0;
+		@include translate(0, 150%, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .5s);
+		}
+	}
+
+	ul{
+		margin-top: 100px;
+
+		li{
+			position: relative;
+			float: left;
+			width: 138px;
+			height: 42px;
+			margin: 0 113px 87px;
+			border: 1px solid $colorFFF;
+			border-radius: 21px;
+			font-size: 20px;
+			color: $colorFFF;
+			text-align: center;
+			line-height: 42px;
+			opacity: 0;
+			@include translate(0, 100%, 0);
+		}
+
+		&.active{
+			li{
+				opacity: 1;
+				@include translate(0, 0, 0);
+
+				&.item-1{
+					@include transitionTransform(opacity, .5s, ease, .5s);
+				}
+
+				&.item-2{
+					@include transitionTransform(opacity, .5s, ease, .6s);
+				}
+
+				&.item-3{
+					@include transitionTransform(opacity, .5s, ease, .7s);
+				}
+
+				&.item-4{
+					@include transitionTransform(opacity, .5s, ease, .8s);
+				}
+
+				&.item-5{
+					@include transitionTransform(opacity, .5s, ease, .9s);
+				}
+
+				&.item-6{
+					@include transitionTransform(opacity, .5s, ease, 1s);
+				}
+			}
+		}
+	}
+}
+
+
+// ==============================================
+// b-intro-three
+// ==============================================
+.b-intro-three{
+	position: relative;
+	
+	.container{
+		height: 1170px;
+		overflow: hidden;
+	}
+
+	ul{
+		width: 1100px;
+		height: 660px;
+		margin-top: 244px;
+
+		li{
+			position: relative;
+			float: left;
+			overflow: hidden;
+
+			&.block-1{
+				z-index: 3;
+				width: 220px;
+				height: 220px;
+				@include backgroundImage('../image/b-intro-three-1-220x220.jpg', no-repeat, center, center, 100%, 100%);
+			}
+			&.block-2{
+				z-index: 2;
+				width: 220px;
+				height: 220px;
+				background-color: #e19c10;
+				opacity: 0;
+				@include translate(-100%, 0, 0);
+
+				h2, h3{
+					margin-right: 30px;
+					font-size: 18px;
+					line-height: 30px;
+					text-align: right;
+					color: $colorFFF;
+				}
+
+				h2{
+					margin-top: 128px;
+				}
+			}
+			&.block-3{
+				z-index: 2;
+				width: 440px;
+				height: 220px;
+				opacity: 0;
+				@include translate(50%, 0, 0);
+
+				h2, h3{
+					position: relative;
+					top: -16px;
+					margin-right: 23px;
+					text-align: right;
+				}
+
+				h2{
+					font-size: 50px;
+					color: $color333;
+					line-height: 80px;
+				}
+				h3{
+					font-size: 20px;
+					color: $color999;
+					line-height: 30px;
+					margin-top: 8px;
+				}
+			}
+			&.block-4{
+				z-index: 3;
+				width: 220px;
+				height: 220px;
+				@include backgroundImage('../image/b-intro-three-4-220x220.jpg', no-repeat, center, center, 100%, 100%);
+			}
+			&.block-5{
+				z-index: 3;
+				width: 440px;
+				height: 220px;
+				@include backgroundImage('../image/b-intro-three-5-440x220.jpg', no-repeat, center, center, 100%, 100%);
+			}
+			&.block-6{
+				z-index: 2;
+				width: 220px;
+				height: 220px;
+				background-color: #423e59;
+				opacity: 0;
+				@include translate(-100%, 0, 0);
+
+				h2, h3{
+					margin-left: 30px;
+					font-size: 18px;
+					line-height: 30px;
+					text-align: left;
+					color: $colorFFF;
+				}
+
+				h2{
+					margin-top: 128px;
+				}
+			}
+			&.block-7{
+				z-index: 3;
+				width: 220px;
+				height: 440px;
+				@include backgroundImage('../image/b-intro-three-7-220x440.jpg', no-repeat, center, center, 100%, 100%);
+			}
+			&.block-8{
+				z-index: 2;
+				width: 220px;
+				height: 220px;
+				background-color: #423e59;
+				opacity: 0;
+				@include translate(-100%, 0, 0);
+
+				h2, h3{
+					margin-right: 30px;
+					font-size: 18px;
+					line-height: 30px;
+					text-align: right;
+					color: $colorFFF;
+				}
+
+				h2{
+					margin-top: 128px;
+				}
+			}
+			&.block-9{
+				z-index: 2;
+				width: 440px;
+				height: 220px;
+				top: -220px;
+				opacity: 0;
+				@include translate(50%, 0, 0);
+
+				h2, h3{
+					margin-right: 23px;
+					text-align: right;
+				}
+
+				h2{
+					margin-top: 104px;
+					font-size: 50px;
+					color: $color333;
+					line-height: 80px;
+				}
+				h3{
+					font-size: 20px;
+					color: $color999;
+					line-height: 30px;
+					margin-top: 8px;
+				}
+			}
+			&.block-10{
+				z-index: 3;
+				width: 220px;
+				height: 220px;
+				top: -220px;
+				@include backgroundImage('../image/b-intro-three-10-220x220.jpg', no-repeat, center, center, 100%, 100%);
+			}
+		}
+
+		&.active{
+			li{
+				&.block-2{
+					opacity: 1;
+					@include translate(0, 0, 0);
+					@include transitionTransform(opacity, .5s, ease, .8s);
+				}
+				&.block-3{
+					opacity: 1;
+					@include translate(0, 0, 0);
+					@include transitionTransform(opacity, .5s, ease, .4s);
+				}
+				&.block-6{
+					opacity: 1;
+					@include translate(0, 0, 0);
+					@include transitionTransform(opacity, .5s, ease, 1s);
+				}
+				&.block-8{
+					opacity: 1;
+					@include translate(0, 0, 0);
+					@include transitionTransform(opacity, .5s, ease, 1.2s);
+				}
+				&.block-9{
+					opacity: 1;
+					@include translate(0, 0, 0);
+					@include transitionTransform(opacity, .5s, ease, .6s);
+				}
+			}
+		}
+	}
+}
+
+
+
+@media screen and (max-width: 1601px){
+// ==============================================
+// b
+// ==============================================
+.b-banner{
+	height: 442px;
+	@include backgroundImage('../image/b-banner-bg-1920x442.jpg', no-repeat, center, center, auto, 100%);
+
+	.tel{
+		@include position(absolute, 2, 38px, none, none, 57px);
+	}
+
+	.text{
+		@include position(absolute, 2, 149px, 0, none, none);
+	}
+
+	.qrCode-box{
+		@include position(absolute, 2, 294px, 202px, none, none);
+	}
+}
+
+
+
+// ==============================================
+// b-intro-one
+// ==============================================
+.b-intro-one{
+	.container{
+		height: 600px;
+	}
+
+	h1{
+		margin-top: 180px;
+	}
+
+	ul{
+		margin-top: 78px;
+	}
+
+}
+
+
+// ==============================================
+// b-intro-two
+// ==============================================
+.b-intro-two{
+	@include backgroundImage('../image/b-intro-two-bg-1920x470.jpg', no-repeat, center, center, auto, 100%);
+	
+	.container{
+		height: 470px;
+	}
+
+	h1{
+		margin-top: 53px;
+	}
+
+	ul{
+		margin-top: 65px;
+
+		li{
+			margin: 0 113px 50px;
+		}
+	}
+}
+
+
+// ==============================================
+// b-intro-three
+// ==============================================
+.b-intro-three{
+	.container{
+		height: 855px;
+	}
+
+	ul{
+		margin-top: 100px;
+	}
+}
+
+
+}

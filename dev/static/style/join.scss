@@ -1,0 +1,1644 @@
+@import "base/common";
+
+// ==============================================
+// .join-banner
+// ==============================================
+.join-banner{
+	@include backgroundImage('../image/join-banner-bg-1920x870.jpg', no-repeat, center, center, auto, 100%);
+
+	.container{
+		border-top: 1px solid transparent;
+		height: 869px;
+	}
+
+	.text{
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.text-1{
+			width: 364px;
+			height: 76px;
+			margin: 283px auto 0;
+			@include backgroundImage('../image/join-banner-text-1-364x76.png', no-repeat, center, center, 100%, 100%);
+		}
+		&.text-2{
+			width: 715px;
+			height: 57px;
+			margin: 35px auto 0;
+			@include backgroundImage('../image/join-banner-text-2-715x57.png', no-repeat, center, center, 100%, 100%);
+		}
+		&.text-3{
+			width: 397px;
+			height: 19px;
+			margin: 26px auto 0;
+			@include backgroundImage('../image/join-banner-text-3-397x19.png', no-repeat, center, center, 100%, 100%);
+		}
+		&.text-4{
+			width: 343px;
+			height: 20px;
+			margin: 52px auto 0;
+			@include backgroundImage('../image/join-banner-text-4-343x20.png', no-repeat, center, center, 100%, 100%);
+		}
+	}
+
+	.qrCode-box{
+		position: relative;
+		z-index: 5;
+		margin-top: 58px;
+
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		.button{
+			display: block;
+			width: 193px;
+			height: 42px;
+			margin: 0 auto;
+			border: 1px solid $colorYellow;
+			border-radius: 21px;
+			font-size: 18px;
+			line-height: 42px;
+			color: $colorYellow;
+			text-align: center;
+			letter-spacing: 3px;
+			@include transition(all, .2s, ease-in, 0);
+
+			&:hover{
+				color: $colorFFF;
+				background-color: $colorYellow;
+				@include transition(all, .2s, ease-in, 0);
+
+				& + .qrCode-bg{
+					display: block;
+					opacity: 1;
+					@include translate(-50%, -30px, 0);
+					@include transitionTransform(opacity, .2s, ease, 0);
+
+				}
+			}
+	
+		}
+		.qrCode-bg{
+			@include position(absolute, 5, 94px, none, none, 50%);
+			width: 212px;
+			height: 222px;
+			@include backgroundImage('../image/c-qrCode-bg-212x222.png', no-repeat, center, center, 100%, 100%);
+			opacity: 0;
+			@include translate(-50%, 0, 0);
+			@include transitionTransform(opacity, .2s, ease, 0);
+
+
+			.qrCode{
+				width: 193px;
+				height: 193px;
+				margin: 21px 0 0 10px;
+				@include backgroundImage('../image/join-qrCode-193x193.jpg', no-repeat, center, center, 100%, 100%);
+			}
+
+			.shadow{
+				@include position(absolute, 2, none, none, 0, 0);
+				width: 212px;
+				height: 42px;
+				@include boxShadow(10px, 10px, 30px, #f3f3f3);
+			}
+		}
+	}
+
+	&.active{
+		.text{
+			opacity: 1;
+			@include translate(0, 0, 0);
+
+			&.text-1{
+				@include transitionTransform(opacity, .4s, ease, 0);
+			}
+			&.text-2{
+				@include transitionTransform(opacity, .4s, ease, .1s);
+			}
+			&.text-3{
+				@include transitionTransform(opacity, .4s, ease, .2s);
+			}
+			&.text-4{
+				@include transitionTransform(opacity, .4s, ease, .3s);
+			}
+		}
+		
+		.qrCode-box{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .4s, ease, .4s);
+		}
+	}
+}
+
+
+
+// ==============================================
+// .join-title
+// ==============================================
+.join-title{
+	position: relative;
+	width: 164px;
+	height: 164px;
+	margin: 0 auto;
+
+	.title-bg{
+		@include position(absolute, 2, 0, none, none, 0);
+		width: 164px;
+		height: 164px;
+		@include backgroundImage('../image/join-title-bg-1-164x164.png', no-repeat, center, center, 100%, 100%);
+		opacity: 0;
+		@include rotate(-45deg);
+	}
+
+	.title-text{
+		@include position(absolute, 3, 0, none, none, 0);
+		width: 164px;
+		height: 164px;
+		line-height: 164px;
+		text-align: center;
+		font-size: 60px;
+		font-weight: bold;
+		color: #e19c10;
+		opacity: 0;
+	}
+
+	&.join-title-white{
+		.title-bg{
+			@include backgroundImage('../image/join-title-bg-2-164x164.png', no-repeat, center, center, 100%, 100%);
+		}
+
+		.title-text{
+			color: $colorFFF;
+		}
+	}
+
+	&.active{
+		.title-bg{
+			opacity: 1;
+			@include rotate(0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+
+		.title-text{
+			opacity: 1;
+			@include transition(opacity, .5s, ease, .3s);
+		}
+	}
+}
+
+
+
+
+// ==============================================
+// .join-intro-one
+// ==============================================
+.join-intro-one{
+
+	.container{
+		height: 711px;
+		overflow: hidden;
+	}
+
+	.join-title{
+		margin-top: 115px;
+	}
+
+	h1{
+		margin-top: 30px;
+		font-size: 50px;
+		color: $color333;
+		line-height: 80px;
+		text-align: center;
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+	}
+
+	ul{
+		margin-top: 32px;
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .5s);
+		}
+
+		li{
+			position: relative;
+			padding-left: 22px;
+			font-size: 18px;
+			color: $color666;
+			line-height: 36px;
+			margin-bottom: 14px;
+
+			&:before{
+				content: "";
+				@include position(absolute, 2, 14px, none, none, 7px);
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background-color: #e19c10;
+			}
+		}
+	}
+}
+
+
+// ==============================================
+// .join-intro-two
+// ==============================================
+.join-intro-two{
+	background-color: #f7f7f7;
+
+	.container{
+		height: 790px;
+		overflow: hidden;
+	}
+
+	h1{
+		margin-top: 112px;
+		font-size: 50px;
+		color: $color333;
+		line-height: 80px;
+		text-align: center;
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+	}
+
+	.info-box{
+		margin-top: 60px;
+
+		.info-item{
+			width: 490px;
+
+			h2{
+				font-size: 24px;
+				line-height: 36px;
+				color: $color333;
+			}
+
+			.desc{
+				height: 108px;
+				margin-top: 21px;
+
+				p{
+					font-size: 18px;
+					line-height: 36px;
+					color: $color333;
+				}
+			}
+
+			.imgbox{
+				margin-top: 48px;
+
+				.img-item{
+					float: left;
+					width: 140px;
+					height: 140px;
+					margin-right: 10px;
+				}
+			}
+
+			&.info-1{
+				float: left;
+				opacity: 0;
+				@include translate(-200px, 0, 0);
+
+				&.active{
+					opacity: 1;
+					@include translate(0, 0, 0);
+					@include transitionTransform(opacity, .5s, ease, .3s);
+				}
+
+				.imgbox{
+					.img-item{
+						&.img-1{
+							@include backgroundImage('../image/join-intro-two-1-1-140x140.jpg', no-repeat, center, center, 100%, 100%);
+						}
+						&.img-2{
+							@include backgroundImage('../image/join-intro-two-1-2-140x140.jpg', no-repeat, center, center, 100%, 100%);
+						}
+						&.img-3{
+							@include backgroundImage('../image/join-intro-two-1-3-140x140.jpg', no-repeat, center, center, 100%, 100%);
+						}
+					}
+				}
+			}
+
+			&.info-2{
+				float: right;
+				opacity: 0;
+				@include translate(200px, 0, 0);
+
+				&.active{
+					opacity: 1;
+					@include translate(0, 0, 0);
+					@include transitionTransform(opacity, .5s, ease, .3s);
+				}
+
+				.imgbox{
+					.img-item{
+						&.img-1{
+							@include backgroundImage('../image/join-intro-two-2-1-140x140.jpg', no-repeat, center, center, 100%, 100%);
+						}
+						&.img-2{
+							@include backgroundImage('../image/join-intro-two-2-2-140x140.jpg', no-repeat, center, center, 100%, 100%);
+						}
+						&.img-3{
+							@include backgroundImage('../image/join-intro-two-2-3-140x140.jpg', no-repeat, center, center, 100%, 100%);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+// ==============================================
+// .join-intro-three
+// ==============================================
+.join-intro-three{
+	@include backgroundImage('../image/join-intro-three-bg-1920x670.jpg', no-repeat, center, center, auto, 100%);
+
+	.container{
+		height: 670px;
+		overflow: hidden;
+		text-align: center;
+	}
+
+	h1{
+		margin-top: 180px;
+		font-size: 50px;
+		line-height: 80px;
+		color: $colorFFF;
+
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+	}
+
+	h2{
+		margin-top: 5px;
+		font-size: 20px;
+		line-height: 36px;
+		color: $colorFFF;
+
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .4s);
+		}
+	}
+
+	h3{
+		display: inline-block;
+		margin-top: 58px;
+		padding: 0 17px;
+		font-size: 20px;
+		line-height: 43px;
+		color: $colorFFF;
+		border: 1px solid $colorFFF;
+		border-radius: 21px;
+
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .5s);
+		}
+	}
+}
+
+
+
+
+// ==============================================
+// .join-intro-four
+// ==============================================
+.join-intro-four{
+	background-color: #f7f7f7;
+
+	.container{
+		height: 775px;
+		overflow: hidden;
+	}
+
+	h1{
+		margin-top: 144px;
+		font-size: 50px;
+		line-height: 80px;
+		color: $color333;
+		text-align: center;
+
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+	}
+	
+	ul{
+		margin-top: 80px;
+
+		li{
+			float: left;
+			width: 300px;
+			margin: 0 33px;
+
+			opacity: 0;
+			@include translate(0, 80px, 0);
+
+			.imgbox{
+				width: 300px;
+				height: 150px;
+			}
+
+			h2{
+				margin-top: 23px;
+				font-size: 24px;
+				color: $color333;
+				// font-weight: bold;
+				line-height: 36px;
+			}
+
+			.desc{
+				margin-top: 23px;
+
+				p{
+					font-size: 18px;
+					color: $color333;
+					line-height: 36px;
+				}
+			}
+
+			&.item-1{
+				.imgbox{
+					@include backgroundImage('../image/join-intro-1-300x150.jpg', no-repeat, center, center, 100%, 100%);
+				}
+			}
+			&.item-2{
+				.imgbox{
+					@include backgroundImage('../image/join-intro-2-300x150.jpg', no-repeat, center, center, 100%, 100%);
+				}
+			}
+			&.item-3{
+				.imgbox{
+					@include backgroundImage('../image/join-intro-3-300x150.jpg', no-repeat, center, center, 100%, 100%);
+				}
+			}
+		}
+
+		&.active{
+			li{
+				opacity: 1;
+				@include translate(0, 0, 0);
+
+				&.item-1{
+					@include transitionTransform(opacity, .5s, ease, .2s);
+				}
+				&.item-2{
+					@include transitionTransform(opacity, .5s, ease, .35s);
+				}
+				&.item-3{
+					@include transitionTransform(opacity, .5s, ease, .5s);
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+// ==============================================
+// .join-intro-five
+// ==============================================
+.join-intro-five{
+
+	.container{
+		height: 476px;
+		overflow: hidden;
+	}
+
+	.join-title{
+		margin-top: 112px;
+	}
+
+	h1{
+		margin-top: 32px;
+		font-size: 50px;
+		color: $color333;
+		line-height: 80px;
+		text-align: center;
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+	}
+}
+
+
+// ==============================================
+// .join-intro-six
+// ==============================================
+.join-intro-six{
+	@include backgroundImage('../image/join-intro-six-bg-1920x820.jpg', no-repeat, center, center, auto, 100%);
+
+	.container{
+		height: 820px;
+		overflow: hidden;
+	}
+
+	h1{
+		margin-top: 127px;
+		font-size: 50px;
+		line-height: 80px;
+		color: $colorFFF;
+		text-align: center;
+
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+	}
+
+	ul{
+		margin: 65px 0 0 191px;
+
+		li{
+			margin-top: 44px;
+			font-size: 18px;
+			color: $colorFFF;
+			line-height: 42px;
+
+			opacity: 0;
+			@include translate(100px, 0, 0);
+
+			&.item-1{
+				margin-top: 0;
+				margin-left: 66px;
+			}
+			&.item-2{
+				margin-left: 141px;
+			}
+			&.item-3{
+				margin-left: 221px;
+			}
+			&.item-4{
+				margin-left: 305px;
+			}
+			&.item-5{
+				margin-left: 380px;
+			}
+		}
+
+		&.active{
+			li{
+				opacity: 1;
+				@include translate(0, 0, 0);
+
+				&.item-1{
+					@include transitionTransform(opacity, .5s, ease, .4s);
+				}
+				&.item-2{
+					@include transitionTransform(opacity, .5s, ease, .5s);
+				}
+				&.item-3{
+					@include transitionTransform(opacity, .5s, ease, .6s);
+				}
+				&.item-4{
+					@include transitionTransform(opacity, .5s, ease, .7s);
+				}
+				&.item-5{
+					@include transitionTransform(opacity, .5s, ease, .8s);
+				}
+			}
+		}
+	}
+}
+
+
+// ==============================================
+// .join-intro-seven
+// ==============================================
+.join-intro-seven{
+
+	.container{
+		height: 685px;
+		overflow: hidden;
+	}
+
+	h1{
+		margin-top: 131px;
+		font-size: 50px;
+		line-height: 80px;
+		color: $color333;
+		text-align: center;
+
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+	}
+
+	ul{
+		margin-top: 86px;
+
+		li{
+			position: relative;
+			width: 380px;
+			height: 84px;
+			margin-bottom: 77px;
+			padding-left: 100px;
+			overflow: hidden;
+
+			opacity: 0;
+			@include translate(0, 50px, 0);
+
+			.imgbox{
+				@include position(absolute, 2, 0, none, none, 0);
+				width: 84px;
+				height: 84px;
+				background-color: #f7f7f7;
+				border-radius: 50%;
+			}
+
+			h2{
+				margin-top: 9px;
+				font-size: 24px;
+				color: $color333;
+				line-height: 36px;
+			}
+
+			h3{
+				font-size: 18px;
+				color: $color333;
+				line-height: 36px;
+			}
+
+			&.item-1, &.item-3{
+				float: left;
+			}
+			&.item-2, &.item-4{
+				float: right;
+			}
+			&.item-1{
+				.imgbox{
+					@include backgroundImage('../image/join-intro-7-icon-1-84x84.png', no-repeat, center, center, 100%, 100%);
+				}
+			}
+			&.item-2{
+				.imgbox{
+					@include backgroundImage('../image/join-intro-7-icon-2-84x84.png', no-repeat, center, center, 100%, 100%);
+				}
+			}
+			&.item-3{
+				.imgbox{
+					@include backgroundImage('../image/join-intro-7-icon-3-84x84.png', no-repeat, center, center, 100%, 100%);
+				}
+			}
+			&.item-4{
+				.imgbox{
+					@include backgroundImage('../image/join-intro-7-icon-4-84x84.png', no-repeat, center, center, 100%, 100%);
+				}
+			}
+		}
+
+		&.active{
+			li{
+				opacity: 1;
+				@include translate(0, 0, 0);
+
+				&.item-1{
+					@include transitionTransform(opacity, .5s, ease, .4s);
+				}
+				&.item-2{
+					@include transitionTransform(opacity, .5s, ease, .5s);
+				}
+				&.item-3{
+					@include transitionTransform(opacity, .5s, ease, .6s);
+				}
+				&.item-4{
+					@include transitionTransform(opacity, .5s, ease, .7s);
+				}
+				&.item-5{
+					@include transitionTransform(opacity, .5s, ease, .8s);
+				}
+			}
+		}
+	}
+}
+
+
+// ==============================================
+// .join-intro-eight
+// ==============================================
+.join-intro-eight{
+	@include backgroundImage('../image/join-intro-eight-bg-1920x820.jpg', no-repeat, center, center, 100%, 100%);
+
+	.container{
+		height: 820px;
+		overflow: hidden;
+	}
+
+	.join-title{
+		margin-top: 122px;
+	}
+
+	h1{
+		margin-top: 32px;
+		font-size: 50px;
+		color: $colorFFF;
+		line-height: 80px;
+		text-align: center;
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+	}
+
+	.time-line{
+		.line{
+			height: 78px;
+			margin-top: 96px;
+			@include backgroundImage('../image/join-intro-eight-line-1100x78.png', no-repeat, center, center, 100%, 100%);
+
+			li{
+				position: relative;
+				float: left;
+				width: 78px;
+				height: 78px;
+				margin-left: 106px;
+
+				.icon{
+					width: 78px;
+					height: 78px;
+				}
+
+				.time{
+					@include position(absolute, 2, 0, 0, 0, 0);
+					font-size: 30px;
+					line-height: 74px;
+					text-align: center;
+					color: $colorFFF;
+					text-align: center;
+
+					span{
+						font-size: 16px;
+						line-height: 78px;
+						color: $colorFFF;
+						font-weight: normal;
+					}
+				}
+
+				&.line-1{
+					margin-left: 50px;
+				}
+			}
+		}
+
+		.text{
+			margin-top: 20px;
+
+			li{
+				float: left;
+				font-size: 16px;
+				color: $colorFFF;
+				line-height: 24px;
+				text-align: center;
+
+				opacity: 0;
+				@include translate(0, 40px, 0);
+
+				&.text-1{
+					width: 178px;
+				}
+				&.text-2{
+					width: 190px;
+				}
+				&.text-3{
+					width: 181px;
+				}
+				&.text-4{
+					width: 186px;
+				}
+				&.text-5{
+					width: 184px;
+				}
+				&.text-6{
+					width: 181px;
+				}
+			}
+
+			&.active{
+				li{
+					opacity: 1;
+					@include translate(0, 0, 0);
+
+					&.text-1{
+						@include transitionTransform(opacity, .5s, ease, .6s);
+					}
+					&.text-2{
+						@include transitionTransform(opacity, .5s, ease, .75s);
+					}
+					&.text-3{
+						@include transitionTransform(opacity, .5s, ease, .9s);
+					}
+					&.text-4{
+						@include transitionTransform(opacity, .5s, ease, 1.05s);
+					}
+					&.text-5{
+						@include transitionTransform(opacity, .5s, ease, 1.2s);
+					}
+					&.text-6{
+						@include transitionTransform(opacity, .5s, ease, 1.35s);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+// ==============================================
+// .join-intro-nine
+// ==============================================
+.join-intro-nine{
+	.container{
+		height: 1005px;
+		overflow: hidden;
+	}
+
+	.join-title{
+		margin-top: 120px;
+	}
+
+	h1{
+		margin-top: 32px;
+		font-size: 50px;
+		color: $color333;
+		line-height: 80px;
+		text-align: center;
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+	}
+
+	ul{
+		margin-top: 80px;
+
+		li{
+			position: relative;
+			float: left;
+			opacity: 0;
+			@include translate(0, 60px, 0);
+
+			&.li-1{
+				width: 438px;
+				height: 380px;
+				@include backgroundImage('../image/join-intro-nine-1-438x380.png', no-repeat, center, center, 100%, 100%);
+			}
+			&.li-2{
+				width: 308px;
+				height: 234px;
+				margin-left: 6px;
+				@include backgroundImage('../image/join-intro-nine-2-308x234.png', no-repeat, center, center, 100%, 100%);
+			}
+			&.li-3{
+				width: 342px;
+				height: 190px;
+				margin-left: 6px;
+				@include backgroundImage('../image/join-intro-nine-3-342x190.png', no-repeat, center, center, 100%, 100%);
+			}
+			&.li-4{
+				width: 342px;
+				height: 184px;
+				margin-left: 6px;
+				top: 6px;
+				@include backgroundImage('../image/join-intro-nine-4-342x184.png', no-repeat, center, center, 100%, 100%);
+			}
+			&.li-5{
+				width: 308px;
+				height: 140px;
+				margin-left: 6px;
+				top: -134px;
+				@include backgroundImage('../image/join-intro-nine-5-308x140.png', no-repeat, center, center, 100%, 100%);
+			}
+		}
+
+		&.active{
+			li{
+				opacity: 1;
+				@include translate(0, 0, 0);
+
+				&.li-1{
+					@include transitionTransform(opacity, .5s, ease, .4s);
+				}
+				&.li-2{
+					@include transitionTransform(opacity, .5s, ease, .5s);
+				}
+				&.li-3{
+					@include transitionTransform(opacity, .5s, ease, .6s);
+				}
+				&.li-4{
+					@include transitionTransform(opacity, .5s, ease, .8s);
+				}
+				&.li-5{
+					@include transitionTransform(opacity, .5s, ease, .7s);
+				}
+			}
+		}
+	}
+}
+
+
+
+// ==============================================
+// .join-intro-ten
+// ==============================================
+.join-intro-ten{
+	background-color: #f7f7f7;
+
+	.container{
+		height: 910px;
+		overflow: hidden;
+	}
+
+	.join-title{
+		margin-top: 104px;
+	}
+
+	h1{
+		margin-top: 32px;
+		font-size: 50px;
+		color: $color333;
+		line-height: 80px;
+		text-align: center;
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+	}
+
+	ul{
+		margin-top: 70px;
+
+		li{
+			float: left;
+			width: 350px;
+
+			opacity: 0;
+			@include translate(0, 60px, 0);
+
+			.imgbox{
+				width: 350px;
+				height: 220px;
+			}
+
+			h2{
+				margin-top: 9px;
+				font-size: 46px;
+				color: $color333;
+				line-height: 60px;
+			}
+
+			.desc{
+				p{
+					font-size: 18px;
+					color: $color333;
+					line-height: 32px;
+				}
+			}
+
+			&.li-1{
+				.imgbox{
+					@include backgroundImage('../image/join-intro-ten-1-350x220.jpg', no-repeat, center, center, 100%, 100%);
+				}
+			}
+			&.li-2{
+				margin: 0 25px;
+				.imgbox{
+					@include backgroundImage('../image/join-intro-ten-2-350x220.jpg', no-repeat, center, center, 100%, 100%);
+				}
+			}
+			&.li-3{
+				.imgbox{
+					@include backgroundImage('../image/join-intro-ten-3-350x220.jpg', no-repeat, center, center, 100%, 100%);
+				}
+			}
+		}
+
+		&.active{
+			li{
+				opacity: 1;
+				@include translate(0, 0, 0);
+
+				&.li-1{
+					@include transitionTransform(opacity, .5s, ease, .5s);
+				}
+				&.li-2{
+					@include transitionTransform(opacity, .5s, ease, .6s);
+				}
+				&.li-3{
+					@include transitionTransform(opacity, .5s, ease, .7s);
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+// ==============================================
+// .join-intro-eleven
+// ==============================================
+.join-intro-eleven{
+	.container{
+		height: 1170px;
+		overflow: hidden;
+	}
+
+	.join-title{
+		margin-top: 126px;
+	}
+
+	h1{
+		margin-top: 32px;
+		font-size: 50px;
+		color: $color333;
+		line-height: 80px;
+		text-align: center;
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .3s);
+		}
+	}
+
+
+	.join-box{
+		margin-top: 32px;
+		height: 730px;
+
+		opacity: 0;
+		@include translate(0, 60px, 0);
+
+		&.active{
+			opacity: 1;
+			@include translate(0, 0, 0);
+			@include transitionTransform(opacity, .5s, ease, .5s);
+		}
+
+		.join-form{
+			height: 730px;
+
+			.tips{
+				position: relative;
+				padding-left: 38px;
+				font-size: 18px;
+				color: $color999;
+				line-height: 40px;
+
+				&:before{
+					content: "";
+					@include position(absolute, 2, 14px, none, none, 20px);
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+					background-color: #e19c10;
+				}
+			}
+
+			ul{
+				li{
+					position: relative;
+					float: left;
+					width: 398px;
+					height: 78px;
+					padding-left: 120px;
+					margin: 0 0 20px 20px;
+					border: 1px solid #e0e0e0;
+
+					.title{
+						@include position(absolute, 2, 0, none, none, 0);
+						width: 119px;
+						height: 78px;
+						background-color: #f7f7f7;
+						font-size: 18px;
+						color: $color333;
+						line-height: 78px;
+						text-align: center;
+						border-right: 1px solid #e0e0e0;
+					}
+
+					.input-box{
+						position: relative;
+						height: 78px;
+						padding: 0 24px;
+
+						input{
+							width: 100%;
+							height: 36px;
+							font-size: 18px;
+							line-height: 36px;
+							padding: 21px 0;
+							color: $color333;
+						}
+
+						.select-modal{
+							display: none;
+							@include position(absolute, 10, 78px, -1px, none, -1px);
+							background-color: $colorFFF;
+							border: 1px solid #e0e0e0;
+
+							ul{
+								li{
+									float: none;
+									width: auto;
+									padding-left: 24px;
+									margin: 0;
+									border: none;
+									height: 60px;
+									line-height: 60px;
+									font-size: 18px;
+									color: $color333;
+									cursor: pointer;
+									@include transition(all, .3s, ease, 0);
+
+									&:hover{
+										background-color: #e19c10;
+										color: $colorFFF;
+										@include transition(all, .3s, ease, 0);
+									}
+								}
+							}
+						}
+
+						&.select-box{
+							@include backgroundImage('../image/join-form-arrow-21x9.png', no-repeat, 355px, 35px, 21px, 9px);
+
+							&:hover{
+								.select-modal{
+									display: block;
+								}
+							}
+						}
+					}
+
+					&.li-required {
+						.title{
+							color: #e19c10;
+						}
+
+						.err-tips{
+							@include position(absolute, 2, 24px, 30px, none, none);
+							width: 75px;
+							height: 30px;
+							background-color: #e19c10;
+							font-size: 18px;
+							color: $colorFFF;
+							line-height: 30px;
+							text-align: center;
+							border-radius: 12px;
+							opacity: 0;
+							@include translate(40px, 0, 0);
+							@include transitionTransform(opacity, .5s, ease, 0);
+
+							&.active{
+								opacity: 1;
+								@include translate(0, 0, 0);
+								@include transitionTransform(opacity, .5s, ease, 0);
+							}
+						}
+					}
+				}
+			}
+
+			.btn-submit{
+				width: 478px;
+				height: 78px;
+				margin: 50px auto 0;
+				border: 1px solid #e19c10;
+				text-align: center;
+				font-size: 0;
+				@include transition(all, .3s, ease, 0);
+				cursor: pointer;
+
+				p{
+					display: inline-block;
+					padding-left: 40px;
+					line-height: 78px;
+					font-size: 18px;
+					color: #e19c10;
+					@include backgroundImage('../image/join-form-btn-24x22.png', no-repeat, 0, 28px, 24px, 22px);
+					@include transition(all, .3s, ease, 0);
+				}
+
+				&:hover, &.active{
+					background-color: #e19c10;
+					@include transition(all, .3s, ease, 0);
+
+					p{
+						color: $colorFFF;
+						@include backgroundImage('../image/join-form-btn-hover-24x22.png', no-repeat, 0, 28px, 24px, 22px);
+						@include transition(all, .3s, ease, 0);
+					}
+				}
+			}
+		}
+
+		.join-succ{
+			height: 730px;
+			overflow: hidden;
+
+			.imgbox{
+				width: 620px;
+				height: 323px;
+				margin: 125px auto 0;
+				@include backgroundImage('../image/join-form-succ-620x323.png', no-repeat, center, center, 100%, 100%);
+			}
+
+			p{
+				margin-top: 90px;
+				font-size: 18px;
+				color: $color666;
+				line-height: 36px;
+				text-align: center;
+			}
+
+		}
+	}
+}
+
+
+
+
+// ==============================================
+// .join-intro-twelve
+// ==============================================
+.join-intro-twelve{
+	.container{
+		height: 482px;
+		overflow: hidden;
+	}
+
+	.qrCodebox{
+		width: 193px;
+		height: 193px;
+		margin: 10px auto 0;
+		@include backgroundImage('../image/join-qrCode-193x193.jpg', no-repeat, center, center, 100%, 100%);
+	}
+
+	.desc{
+		margin-top: 24px;
+
+		p{
+			font-size: 18px;
+			color: $color666;
+			line-height: 36px;
+			text-align: center;
+		}
+	}
+}
+
+
+
+
+
+
+@media screen and (max-width: 1601px){
+
+// ==============================================
+// .join-banner
+// ==============================================
+.join-banner{
+	@include backgroundImage('../image/join-banner-bg-1920x555.jpg', no-repeat, center, center, auto, 100%);
+
+	.container{
+		height: 555px;
+	}
+
+	.text{
+		&.text-1{
+			margin: 83px auto 0;
+		}
+		&.text-4{
+			margin: 32px auto 0;
+		}
+	}
+
+	.qrCode-box{
+		margin-top: 38px;
+	}
+}
+
+// ==============================================
+// .join-intro-one
+// ==============================================
+.join-intro-one{
+	.container{
+		height: 611px;
+	}
+
+	.join-title{
+		margin-top: 60px;
+	}
+
+	ul{
+		margin-top: 22px;
+	}
+}
+
+
+// ==============================================
+// .join-intro-two
+// ==============================================
+.join-intro-two{
+	.container{
+		height: 590px;
+		overflow: hidden;
+	}
+
+	h1{
+		margin-top: 47px;
+	}
+
+	.info-box{
+		margin-top: 50px;
+
+		.info-item{
+			.desc{
+				margin-top: 16px;
+			}
+
+			.imgbox{
+				margin-top: 33px;
+			}
+		}
+	}
+}
+
+
+
+// ==============================================
+// .join-intro-three
+// ==============================================
+.join-intro-three{
+	@include backgroundImage('../image/join-intro-three-bg-1920x425.jpg', no-repeat, center, center, auto, 100%);
+
+	.container{
+		height: 425px;
+	}
+
+	h1{
+		margin-top: 100px;
+	}
+}
+
+// ==============================================
+// .join-intro-four
+// ==============================================
+.join-intro-four{
+	.container{
+		height: 585px;
+	}
+
+	h1{
+		margin-top: 59px;
+	}
+	
+	ul{
+		margin-top: 40px;
+	}
+}
+
+
+
+// ==============================================
+// .join-intro-five
+// ==============================================
+.join-intro-five{
+
+	.container{
+		height: 349px;
+	}
+
+	.join-title{
+		margin-top: 37px;
+	}
+}
+
+
+// ==============================================
+// .join-intro-six
+// ==============================================
+.join-intro-six{
+	@include backgroundImage('../image/join-intro-six-bg-1920x615.jpg', no-repeat, center, center, auto, 100%);
+
+	.container{
+		height: 615px;
+	}
+
+	h1{
+		margin-top: 49px;
+	}
+
+	ul{
+		margin: 50px 0 0 191px;
+	}
+}
+
+
+// ==============================================
+// .join-intro-seven
+// ==============================================
+.join-intro-seven{
+
+	.container{
+		height: 442px;
+	}
+
+	h1{
+		margin-top: 38px;
+	}
+
+	ul{
+		margin-top: 41px;
+
+		li{
+			margin-bottom: 54px;
+		}
+	}
+}
+
+
+// ==============================================
+// .join-intro-eight
+// ==============================================
+.join-intro-eight{
+	@include backgroundImage('../image/join-intro-eight-bg-1920x582.jpg', no-repeat, center, center, 100%, 100%);
+
+	.container{
+		height: 582px;
+	}
+
+	.join-title{
+		margin-top: 24px;
+	}
+
+	.time-line{
+		.line{
+			margin-top: 56px;
+		}
+	}
+}
+
+
+
+// ==============================================
+// .join-intro-nine
+// ==============================================
+.join-intro-nine{
+	.container{
+		height: 800px;
+	}
+
+	.join-title{
+		margin-top: 42px;
+	}
+
+	ul{
+		margin-top: 35px;
+	}
+}
+
+
+
+// ==============================================
+// .join-intro-ten
+// ==============================================
+.join-intro-ten{
+	.container{
+		height: 763px;
+	}
+
+	.join-title{
+		margin-top: 36px;
+	}
+
+	ul{
+		margin-top: 43px;
+	}
+}
+
+
+
+
+
+// ==============================================
+// .join-intro-eleven
+// ==============================================
+.join-intro-eleven{
+	.container{
+		height: 972px;
+	}
+
+	.join-title{
+		margin-top: 43px;
+	}
+
+	.join-box{
+		height: 532px;
+
+		.join-form{
+			height: 532px;
+		}
+
+		.join-succ{
+			height: 532px;
+		
+			.imgbox{
+				margin: 80px auto 0;
+			}
+		}
+	}
+}
+
+
+
+
+// ==============================================
+// .join-intro-twelve
+// ==============================================
+.join-intro-twelve{
+	.container{
+		height: 345px;
+	}
+
+	.desc{
+		margin-top: 24px;
+	}
+}
+
+}
